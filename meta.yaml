@@ -1,0 +1,4 @@
+name: ghidra-bridge
+description: Atomic bridge plugin exposing ghidra_bridge only.
+author: vmoranv
+source_repo: https://github.com/vmoranv/jshook_plugin_ghidra_bridge
