@@ -232,10 +232,6 @@ const plugin: PluginContract = {
     if (!enabled) return { valid: false, errors: ['Plugin disabled by config'] };
     return { valid: true, errors: [] };
   },
-  onRegister(ctx: PluginLifecycleContext): void {
-    ctx.registerDomain(domainManifest);
-    ctx.registerMetric('ghidra_bridge_calls_total');
-  },
 };
 
 export default plugin;
