@@ -115,7 +115,7 @@ async function handleGhidraBridge(args: ToolArgs) {
   }
 }
 
-export default createExtension('io.github.vmoranv.ghidra-bridge', '0.1.0')
+const plugin = createExtension('io.github.vmoranv.ghidra-bridge', '0.1.0')
   .compatibleCore('>=0.1.0')
   .profile(['full'])
   .allowHost(['127.0.0.1', 'localhost', '::1'])
@@ -141,3 +141,12 @@ export default createExtension('io.github.vmoranv.ghidra-bridge', '0.1.0')
     if (!enabled) return { valid: false, errors: ['Plugin disabled by config'] };
     return { valid: true, errors: [] };
   });
+
+Object.defineProperty(plugin, 'workflows', {
+  value: [],
+  enumerable: false,
+  configurable: true,
+  writable: false,
+});
+
+export default plugin;
